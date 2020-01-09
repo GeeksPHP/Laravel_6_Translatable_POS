@@ -74,6 +74,8 @@ class LaratrustSetupTables extends Migration
      */
     public function down()
     {
+
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('permission_user');
         Schema::dropIfExists('permission_role');
         Schema::dropIfExists('permissions');

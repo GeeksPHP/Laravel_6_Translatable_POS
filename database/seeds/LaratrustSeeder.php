@@ -12,8 +12,8 @@ class LaratrustSeeder extends Seeder
      */
     public function run()
     {
-        $this->command->info('Truncating User, Role and Permission tables');
-        $this->truncateLaratrustTables();
+        // $this->command->info('Truncating User, Role and Permission tables');
+        // $this->truncateLaratrustTables();
 
         $config = config('laratrust_seeder.role_structure');
         $userPermission = config('laratrust_seeder.permission_structure');
