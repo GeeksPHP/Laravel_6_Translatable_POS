@@ -12,9 +12,9 @@ class ClientController extends Controller
     {
         $clients = Client::when($request->search, function($q) use ($request){
 
-            return $q->where('name', 'like', '%' . $request->search . '%')
+            return $q->whereTranslationLike('name', 'like', '%' . $request->search . '%')
                 ->orWhere('phone', 'like', '%' . $request->search . '%')
-                ->orWhere('address', 'like', '%' . $request->search . '%');
+                ->orWhereTranslationLike('address', 'like', '%' . $request->search . '%');
 
         })->latest()->paginate(5);
 
@@ -30,12 +30,24 @@ class ClientController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'phone' => 'required|array|min:1',
-            'phone.0' => 'required',
-            'address' => 'required',
-        ]);
+        $rules = [];
+
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.name' => ['required', Rule::unique('client_translations', 'name')]];
+            $rules += [$locale . '.address' => ['required', Rule::unique('client_translations', 'address')]];
+
+        }//end of for each
+        $rules +=['phone' => 'required|array|min:1',
+        'phone.0' => 'required',];
+        $request->validate($rules);
+
+        // $request->validate([
+        //     'name' => 'required',
+        //     'phone' => 'required|array|min:1',
+        //     'phone.0' => 'required',
+        //     'address' => 'required',
+        // ]);
 
         $request_data = $request->all();
         $request_data['phone'] = array_filter($request->phone);
@@ -55,16 +67,28 @@ class ClientController extends Controller
 
     public function update(Request $request, Client $client)
     {
-        $request->validate([
-            'name' => 'required',
-            'phone' => 'required|array|min:1',
-            'phone.0' => 'required',
-            'address' => 'required',
-        ]);
+        $rules = [];
+
+        foreach (config('translatable.locales') as $locale) {
+
+            $rules += [$locale . '.name' => ['required', Rule::unique('client_translations', 'name')]];
+            $rules += [$locale . '.address' => ['required', Rule::unique('client_translations', 'address')]];
+
+        }//end of for each
+        $rules +=['phone' => 'required|array|min:1',
+        'phone.0' => 'required',];
+        $request->validate($rules);
+
+        // $request->validate([
+        //     'name' => 'required',
+        //     'phone' => 'required|array|min:1',
+        //     'phone.0' => 'required',
+        //     'address' => 'required',
+        // ]);
 
         $request_data = $request->all();
         $request_data['phone'] = array_filter($request->phone);
-
+        
         $client->update($request_data);
         session()->flash('success', __('site.updated_successfully'));
         return redirect()->route('dashboard.clients.index');

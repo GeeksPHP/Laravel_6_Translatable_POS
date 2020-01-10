@@ -13,13 +13,19 @@ class CategoriesTableSeeder extends Seeder
     {
 
         $categories = ['cat one', 'cat two', 'cat three'];
+        $categories1 = ['مجموعه 1', 'مجموعه 2', 'مجموعه 3'];
 
         foreach ($categories as $category) {
 
             \App\Category::create([
-                'ar' => ['name' => $category],
                 'en' => ['name' => $category],
             ]);
+            foreach ($categories1 as $category1) {
+
+                \App\Category::create([
+                    'ar' => ['name' => $category],
+                ]);
+    
 
         }//end of foreach
 
