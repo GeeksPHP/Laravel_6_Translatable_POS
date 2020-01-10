@@ -20,12 +20,14 @@ class CategoriesTableSeeder extends Seeder
             \App\Category::create([
                 'en' => ['name' => $category],
             ]);
-            foreach ($categories1 as $category1) {
 
-                \App\Category::create([
-                    'ar' => ['name' => $category],
-                ]);
-    
+        }//end of foreach
+
+        foreach ($categories1 as $category1) {
+
+            \App\Category::create([
+                'ar' => ['name' => $category1],
+            ]);
 
         }//end of foreach
 

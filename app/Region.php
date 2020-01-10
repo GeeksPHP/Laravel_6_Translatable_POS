@@ -4,14 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-//use Sqits\UserStamps\Concerns\HasUserStamps;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 
-class Region extends Model
+class Region extends Model implements TranslatableContract
 {
-    use \Dimsav\Translatable\Translatable;
-    use SoftDeletes;
-   // use HasUserStamps;
-
+    use Translatable;
     protected $guarded = [];
     public $translatedAttributes = ['name'];
 

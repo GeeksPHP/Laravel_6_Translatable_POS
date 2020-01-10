@@ -21,6 +21,8 @@ class AreaTranslations extends Migration
 
             $table->unique(['area_id', 'locale']);
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
+            $table->softDeletes();
+
         });
 
     }

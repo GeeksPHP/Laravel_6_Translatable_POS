@@ -21,6 +21,8 @@ class ZonesTranslations extends Migration
 
             $table->unique(['zone_id', 'locale']);
             $table->foreign('zone_id')->references('id')->on('zones')->onDelete('cascade');
+            $table->softDeletes();
+
         });
     }
 
@@ -31,6 +33,7 @@ class ZonesTranslations extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('zone_translations');
+
     }
 }

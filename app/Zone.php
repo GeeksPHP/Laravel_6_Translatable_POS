@@ -3,11 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Zone extends Model
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
+
+class Zone extends Model implements TranslatableContract
 {
-    protected $guarded = ['id'];
-
+    use Translatable;
+    protected $guarded = [];
     public $translatedAttributes = ['name'];
 
 

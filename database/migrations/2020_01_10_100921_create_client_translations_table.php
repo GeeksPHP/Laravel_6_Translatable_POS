@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateClientTranslationsTable extends Migration
 {
@@ -17,12 +17,13 @@ class CreateClientTranslationsTable extends Migration
             $table->increments('id');
             $table->integer('client_id')->unsigned();
             $table->string('name');
-            $table->string('address');
-
+            $table->text('address');
             $table->string('locale')->index();
 
             $table->unique(['client_id', 'locale']);
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->softDeletes();
+
         });
     }
 

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class ClientTranslation extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['name','address'];
+    protected $fillable = ['name', 'address'];
 
-}//end of model
+}

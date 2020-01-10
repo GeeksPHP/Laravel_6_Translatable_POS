@@ -18,6 +18,8 @@ class CreateOrdersTable extends Migration
             $table->integer('client_id')->unsigned();
             $table->double('total_price', 8, 2)->nullable();
             $table->timestamps();
+            $table->softDeletes();
+
             
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
         });

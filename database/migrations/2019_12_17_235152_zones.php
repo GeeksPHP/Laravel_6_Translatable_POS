@@ -17,6 +17,7 @@ class Zones extends Migration
 
         $table->increments('id');
         $table->integer('govern_id')->unsigned();
+        $table->softDeletes();
 
         $table->timestamps();
     });
@@ -30,7 +31,7 @@ class Zones extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('governs');
+        Schema::dropIfExists('zones');
 
     }
 }

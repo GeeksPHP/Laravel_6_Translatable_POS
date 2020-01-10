@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Govern extends Model
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
+
+class Govern extends Model implements TranslatableContract
 {
-    use \Dimsav\Translatable\Translatable;
-
-    protected $guarded = ['id'];
-
+    use Translatable;
+    protected $guarded = [];
     public $translatedAttributes = ['name'];
-
-
     public function region()
     {
         return $this->belongsTo(Region::class);
