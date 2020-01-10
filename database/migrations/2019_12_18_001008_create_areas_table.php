@@ -17,6 +17,8 @@ class CreateAreasTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->softDeletes();
+            // $table->userstamps();
+            // $table->softUserstamps();
 
         });
     }

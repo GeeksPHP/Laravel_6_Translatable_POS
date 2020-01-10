@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
+use Sqits\UserStamps\Concerns\HasUserStamps;
 
-class Area extends Model implements TranslatableContract
+class Area extends Model
 {
-    use Translatable;
+      use Translatable;
+       use HasUserStamps;
+
     protected $guarded = [];
     public $translatedAttributes = ['name'];
 

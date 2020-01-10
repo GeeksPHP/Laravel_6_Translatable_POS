@@ -17,8 +17,12 @@ class CreateGovernsTable extends Migration
             $table->increments('id');
             $table->integer('region_id')->unsigned();
             $table->softDeletes();
+            // $table->userstamps();
+            // $table->softUserstamps();
 
             $table->timestamps();
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
+
             });
     }
 

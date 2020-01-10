@@ -18,8 +18,12 @@ class Zones extends Migration
         $table->increments('id');
         $table->integer('govern_id')->unsigned();
         $table->softDeletes();
+            // $table->userstamps();
+            // $table->softUserstamps();
 
         $table->timestamps();
+        $table->foreign('govern_id')->references('id')->on('governs')->onDelete('cascade');
+
     });
 
     }

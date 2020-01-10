@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
+use Sqits\UserStamps\Concerns\HasUserStamps;
+
 class Order extends Model
 {
+    //   use HasUserStamps;
+
     protected $guarded = [];
 
     public function client()

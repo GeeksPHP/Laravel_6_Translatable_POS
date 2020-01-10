@@ -20,7 +20,9 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            
+            // $table->userstamps();
+            // $table->softUserstamps();
+
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
         });
     }

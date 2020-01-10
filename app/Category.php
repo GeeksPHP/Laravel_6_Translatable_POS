@@ -8,10 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 
-class Category extends Model implements TranslatableContract
+use Sqits\UserStamps\Concerns\HasUserStamps;
+
+class Category extends Model
 {
-    use Translatable;
-    protected $guarded = [];
+      use Translatable;
+    //   use HasUserStamps;
+
+       protected $guarded = [];
     public $translatedAttributes = ['name'];
 
     public function products()

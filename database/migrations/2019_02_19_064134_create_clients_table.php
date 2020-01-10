@@ -17,6 +17,8 @@ class CreateClientsTable extends Migration
             $table->increments('id');
             $table->string('phone');
             $table->softDeletes();
+            // $table->userstamps();
+            // $table->softUserstamps();
 
             $table->timestamps();
         });

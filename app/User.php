@@ -9,10 +9,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Laratrust\Traits\LaratrustUserTrait;
 
+use Sqits\UserStamps\Concerns\HasUserStamps;
+
+
+
 class User extends Authenticatable
 {
     use LaratrustUserTrait;
     use Notifiable;
+   // use HasUserStamps;
 
     /**
      * The attributes that are mass assignable.

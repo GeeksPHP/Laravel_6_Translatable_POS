@@ -8,9 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 
-class Govern extends Model implements TranslatableContract
+use Sqits\UserStamps\Concerns\HasUserStamps;
+
+class Govern extends Model
 {
-    use Translatable;
+      use Translatable;
+      // use HasUserStamps;
+
     protected $guarded = [];
     public $translatedAttributes = ['name'];
     public function region()

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0bdefa3cddd280be2f14d0f8c9ce32f",
+    "content-hash": "4b7854a4d4424433ebc8b3622984fe08",
     "packages": [
         {
             "name": "astrotomic/laravel-translatable",
@@ -2007,6 +2007,72 @@
             "time": "2019-11-08T13:53:13+00:00"
         },
         {
+            "name": "sqits/laravel-userstamps",
+            "version": "0.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sqits/laravel-userstamps.git",
+                "reference": "16fce3f7a1db1ea1cc31532122dfec5584a9a259"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sqits/laravel-userstamps/zipball/16fce3f7a1db1ea1cc31532122dfec5584a9a259",
+                "reference": "16fce3f7a1db1ea1cc31532122dfec5584a9a259",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.6|^6.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.6",
+                "larapack/dd": "^1.0",
+                "orchestra/testbench": "^3.5",
+                "phpunit/phpunit": "^7.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sqits\\UserStamps\\UserStampsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sqits\\UserStamps\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sqits",
+                    "email": "info@sqits.nl",
+                    "homepage": "https://www.sqits.nl",
+                    "role": "Company"
+                },
+                {
+                    "name": "Ruud Schaaphuizen",
+                    "email": "r.schaaphuizen@sqits.nl",
+                    "homepage": "https://www.sqits.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Package to add created_by, updated_by and deleted_by to models.",
+            "homepage": "https://github.com/sqits/laravel-userstamps",
+            "keywords": [
+                "created",
+                "deleted",
+                "laravel",
+                "updated",
+                "userstamps"
+            ],
+            "time": "2019-11-13T05:50:35+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.2.3",
             "source": {
@@ -3541,6 +3607,57 @@
                 "environment"
             ],
             "time": "2019-09-10T21:37:39+00:00"
+        },
+        {
+            "name": "wildside/userstamps",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WildsideUK/Laravel-Userstamps.git",
+                "reference": "e530ea5606b17c700a46b293f163477e901964a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WildsideUK/Laravel-Userstamps/zipball/e530ea5606b17c700a46b293f163477e901964a5",
+                "reference": "e530ea5606b17c700a46b293f163477e901964a5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.1|^6.0",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/database": "^5.1|^6.0",
+                "orchestra/testbench": "^3.1|^4.0",
+                "phpunit/phpunit": "^5.0|^6.0|^7.0|^8.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wildside\\Userstamps\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WILDSIDE",
+                    "email": "hello@wildside.uk",
+                    "homepage": "https://wildside.uk"
+                }
+            ],
+            "description": "Laravel Userstamps provides an Eloquent trait which automatically maintains `created_by` and `updated_by` columns on your model, populated by the currently authenticated user in your application.",
+            "keywords": [
+                "created_by",
+                "deleted_by",
+                "eloquent",
+                "laravel",
+                "updated_by",
+                "userstamps"
+            ],
+            "time": "2019-10-21T08:26:20+00:00"
         }
     ],
     "packages-dev": [
