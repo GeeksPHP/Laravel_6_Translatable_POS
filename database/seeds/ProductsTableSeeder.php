@@ -11,14 +11,14 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        $products = ['pro one', 'pro two'];
+        $products = ['1', '2'];
 
         foreach ($products as $product) {
 
             \App\Product::create([
                 'category_id' => 1,
-                'ar' => ['name' => $product, 'description' => $product . ' desc'],
-                'en' => ['name' => $product, 'description' => $product . ' desc'],
+                'ar' => ['name' => 'صنف'.$product, 'description' => 'وصف'.$product],
+                'en' => ['name' => 'Product'.$product, 'description' => 'Description'.$product],
                 'purchase_price' => 100,
                 'sale_price' => 150,
                 'stock' => 100,

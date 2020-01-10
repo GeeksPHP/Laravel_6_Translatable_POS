@@ -12,7 +12,7 @@ class OrderController extends Controller
     {
         $orders = Order::whereHas('client', function ($q) use ($request) {
 
-            return $q->where('name', 'like', '%' . $request->search . '%');
+            return $q->whereTranslationLike('name', '%' . $request->search . '%');
 
         })->paginate(5);
 

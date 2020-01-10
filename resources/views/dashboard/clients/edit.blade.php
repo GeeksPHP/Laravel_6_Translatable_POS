@@ -29,10 +29,18 @@
                         {{ csrf_field() }}
                         {{ method_field('put') }}
 
-                        <div class="form-group">
-                            <label>@lang('site.name')</label>
-                            <input type="text" name="name" class="form-control" value="{{ $client->name }}">
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('site.' . $locale . '.name')</label>
+                                <input type="text" name="{{ $locale }}[name]" class="form-control" value="{{ $client->name }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>@lang('site.' . $locale . '.address')</label>
+                                <input type="text" name="{{ $locale }}[address]" class="form-control" value="{{ $client->address }}">
+                            </div>
+
+                        @endforeach
 
                         @for ($i = 0; $i < 2; $i++)
                             <div class="form-group">

@@ -54,8 +54,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>@lang('site.name')</th>
-                                <th>@lang('site.governs_count')</th>
-                                <th>@lang('site.related_governs')</th>
 
                                 <th>@lang('site.action')</th>
                             </tr>
@@ -66,8 +64,6 @@
                                 <tr>
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $area->name }}</td>
-                                    <td>{{ $area->governs->count() }}</td>
-                                    <td><a href="{{ route('dashboard.governs.index', ['area_id' => $area->id]) }}" class="btn btn-info btn-sm">@lang('site.related_governs')</a></td>
 
                                     <td>
                                         @if (auth()->user()->hasPermission('update_areas'))

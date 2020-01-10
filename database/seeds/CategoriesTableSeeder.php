@@ -11,23 +11,14 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        $products = ['1', '2'];
 
-        $categories = ['cat one', 'cat two', 'cat three'];
-        $categories1 = ['مجموعه 1', 'مجموعه 2', 'مجموعه 3'];
-
-        foreach ($categories as $category) {
+        foreach ($products as $product) {
 
             \App\Category::create([
-                'en' => ['name' => $category],
-            ]);
-
-        }//end of foreach
-
-        foreach ($categories1 as $category1) {
-
-            \App\Category::create([
-                'ar' => ['name' => $category1],
-            ]);
+                'ar' => ['name' => 'مجموعه'.$product],
+                'en' => ['name' => 'Category'.$product],
+                ]);
 
         }//end of foreach
 

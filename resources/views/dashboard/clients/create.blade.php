@@ -29,22 +29,26 @@
                         {{ csrf_field() }}
                         {{ method_field('post') }}
                         
-                        <div class="form-group">
-                            <label>@lang('site.name')</label>
-                            <input type="text" name="name" class="form-control" value="{{ old('name') }}">
-                        </div>
+                        @foreach (config('translatable.locales') as $locale)
+                            <div class="form-group">
+                                <label>@lang('site.' . $locale . '.name')</label>
+                                <input type="text" name="{{ $locale }}[name]" class="form-control" value="{{ old($locale . '.name') }}">
+                            </div>
 
-                       @for ($i = 0; $i < 2; $i++)
+                            <div class="form-group">
+                                <label>@lang('site.' . $locale . '.address')</label>
+                                <input type="text" name="{{ $locale }}[address]" class="form-control" value="{{ old($locale . '.address') }}">
+                            </div>
+
+                        @endforeach
+
+                       @for ($i = 0; $i < 3; $i++)
                             <div class="form-group">
                                 <label>@lang('site.phone')</label>
                                 <input type="text" name="phone[]" class="form-control">
                             </div>
                        @endfor
 
-                        <div class="form-group">
-                            <label>@lang('site.address')</label>
-                            <textarea name="address" class="form-control">{{ old('address') }}</textarea>
-                        </div>
                         
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> @lang('site.add')</button>

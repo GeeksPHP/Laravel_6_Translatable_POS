@@ -11,15 +11,17 @@ class ClientsTableSeeder extends Seeder
      */
     public function run()
     {
-        $clients = ['ahmed', 'mohamed'];
+        $products = ['1', '2'];
 
-        foreach ($clients as $client) {
+        foreach ($products as $product) {
 
             \App\Client::create([
-               'name' => $client,
-               'phone' => '011111112',
-               'address' => 'haram',
-            ]);
+                'ar' => ['name' => 'عميل'.$product, 'address' => 'عنوان'.$product],
+                'en' => ['name' => 'customer'.$product, 'address' => 'address'.$product],
+               
+                'phone' => 123456,
+
+                ]);
 
         }//end of foreach
 

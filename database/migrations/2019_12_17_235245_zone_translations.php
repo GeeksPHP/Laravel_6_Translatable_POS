@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ZonesTranslations extends Migration
+class ZoneTranslations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class ZonesTranslations extends Migration
      */
     public function up()
     {
-        Schema::create('zones_translations', function (Blueprint $table) {
+        Schema::create('zone_translations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('zone_id')->unsigned();
             $table->string('name');

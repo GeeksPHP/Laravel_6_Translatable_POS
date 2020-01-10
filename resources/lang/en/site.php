@@ -56,6 +56,16 @@ return [
     'categories' => 'Categories',
     'all_categories' => 'All Categories',
 
+    'all_clients' => 'All Clients',
+
+    'areas' => 'Areas',
+    'all_areas' => 'All Areas',
+    'area' => 'Area',
+
+    'bricks' => 'Bricks',
+    'all_bricks' => 'All Bricks',
+    'brick' => 'Brick',
+
     'governs' => 'Governs',
     'all_governs' => 'ِAll Governs',
     'govern' => 'Govern',
@@ -89,11 +99,14 @@ return [
     'ar' => [
         'name' => 'Arabic Name',
         'description' => 'Arabic Description',
+        'address' => 'Arabic Address',
     ],
 
     'en' => [
         'name' => 'English Name',
         'description' => 'English Description',
+        'address' => ' English Address',
+
     ],
 
 ];
